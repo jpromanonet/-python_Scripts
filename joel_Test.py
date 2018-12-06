@@ -22,7 +22,7 @@ def joeltestresult(score_Value):
     elif score_Value == 7:
         return 'SCORE 7 | Is this a team or just a bunch of newbies?'
     elif score_Value == 8:
-        return 'SCORE 8 | Meh, i am not going to pay to copy-paste code from StackOverFlow'
+        return 'SCORE 8 | Meh, i am not going to pay for copy-paste code from StackOverFlow'
     elif score_Value == 9:
         return 'SCORE 9 | Well, the team is getting better'
     elif score_Value == 10:
@@ -44,7 +44,131 @@ if joel_Answer == 'y':
 
 # Question 2
 
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
 print('Can you make a build in one step?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 3
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you make daily builds?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 4
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you have a bug database?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 5
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you fix bugs before writing new code?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 6
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you have an up-to-date schedule?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 7
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you have a spec?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 8
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do programmers have quiet working conditions?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 9
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you use the best tools money can buy?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 10
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you have testers?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 11
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do new candidates write code during their interview?')
+joel_Answer = input()
+
+if joel_Answer == 'y':
+    joel_Score_Value = joel_Score_Value + 1
+
+# Question 12
+
+print('Actual Joels Score: ') 
+print(joel_Score_Value)
+print('')
+
+print('Do you do hallway usability testing?')
 joel_Answer = input()
 
 if joel_Answer == 'y':
