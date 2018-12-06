@@ -1,7 +1,3 @@
-# Import the libraries to use
-
-import random
-
 # Define global variables
 
 joel_Score_Value = 0
