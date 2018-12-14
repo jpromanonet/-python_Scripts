@@ -4,33 +4,50 @@ joel_Score_Value = 0
 joel_Answer = ''
 result = ''
 
+# Define lists and values
+
+test_Grade_Answer = [
+    'DEFCON 1 | Cocked Pistol | Inminent Nuclear World War',
+    'DEFCON 2 | Fast Pace | One Step to Nuclear War',
+    'DEFCON 3 | Round House',
+    'DEFCON 4 | Double Take',
+    'DEFCON 5 | Fade Out',
+    'SCORE 6 | Not defcon but stil a disaster',
+    'SCORE 7 | Is this a team or just a bunch of newbies?',
+    'SCORE 8 | Meh, i am not going to pay for copy-paste code from StackOverFlow',
+    'SCORE 9 | Well, the team is getting better',
+    'SCORE 10 | The team still has serious problems',
+    'SCORE 11 | The team is not, a torable development team!',
+    'SCORE 12 | You have the perfect team! CONGRATS!!!'
+]
+
 # Define functions
 
 def joeltestresult(score_Value):
     if score_Value == 1:
-        return 'DEFCON 1 | Cocked Pistol | Inminent Nuclear World War'
+        return test_Grade_Answer[0]
     elif score_Value == 2:
-        return 'DEFCON 2 | Fast Pace | One Step to Nuclear War'
+        return test_Grade_Answer[1]
     elif score_Value == 3:
-        return 'DEFCON 3 | Round House'
+        return test_Grade_Answer[2]
     elif score_Value == 4:
-        return 'DEFCON 4 | Double Take'
+        return test_Grade_Answer[3]
     elif score_Value == 5:
-        return 'DEFCON 5 | Fade Out'
+        return test_Grade_Answer[4]
     elif score_Value == 6:
-        return 'SCORE 6 | Not defcon but stil a disaster'
+        return test_Grade_Answer[5]
     elif score_Value == 7:
-        return 'SCORE 7 | Is this a team or just a bunch of newbies?'
+        return test_Grade_Answer[6]
     elif score_Value == 8:
-        return 'SCORE 8 | Meh, i am not going to pay for copy-paste code from StackOverFlow'
+        return test_Grade_Answer[7]
     elif score_Value == 9:
-        return 'SCORE 9 | Well, the team is getting better'
+        return test_Grade_Answer[8]
     elif score_Value == 10:
-        return 'SCORE 10 | The team still has serious problems'
+        return test_Grade_Answer[9]
     elif score_Value == 11:
-        return 'SCORE 11 | The team is not, a torable development team!'
+        return test_Grade_Answer[10]
     elif score_Value == 12:
-        return 'SCORE 12 | You have the perfect team! CONGRATS!!!'
+        return test_Grade_Answer[11]
 
 # Define the questions!
 
