@@ -1,7 +1,12 @@
+# Importing libraries
+
+import re
+
 # Defining global values
 
 telephone_Number = None
 result = None
+match_Object = None
 
 # Defining functions
 
@@ -10,25 +15,16 @@ def isPhoneNumber(text):
     if len(text) != 9:
         return False
        
-    for i in range(0, 3):
-        if not text[i].isdecimal():
-            return False
-        if text[4] != '-':
-            return False
-
-    for i in range(8, 12):
-        if not text[i].isdecimal():
-            return False
-        return True
+    if text[4] != '-': 
+        return False
+        
+    phoneNumRegex = re.compile(r'\d\d\d\d-\d\d\d\d')
+    match_Object = phoneNumRegex.search(text)
+    print('Phone number found: ' + match_Object.group())
 
 # Script logic
 
-print('Insert a telephone number')
+print('Insert a text with a phone number to set apart.')
 telephone_Number = input()
 
 result = isPhoneNumber(str(telephone_Number))
-
-if result == True:
-    print(telephone_Number + ' is a telephone number!')
-else:
-    print('Please insert a valid number')
