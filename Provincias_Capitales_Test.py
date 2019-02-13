@@ -10,8 +10,10 @@ import random
 # Defining global variables
 
 capitales = None
-how_Many_Test = int
 quiz_File = None
+quiz_Number = 0
+exams_For_Pupil = 0
+answers_Quantity = 0
 
 # Datos de los examenes, Keys son provincias y Values son sus capitales
 
@@ -42,44 +44,56 @@ capitales = {'Buenos Aires':'La Plata',
 # Writing the User interface
 
 print('¿Cuantos examenes queres generar?')
-how_Many_Test = input()
+exams_For_Pupil = input()
+print(' ')
+
+print('¿Cuantas preguntas por examen?')
+answers_Quantity = input()
+print(' ')
+
+print('Creado Examen Aleatorio...')
 
 # Program logic
 
-for quiz_Number in range(int(how_Many_Test)): # Generate the number of test asked
-    # Creating the quiz and answer files
-    quiz_Number = quiz_Number + 1
-    quiz_File = open('Capitales_Examenes' + str(quiz_Number) + '.txt' , 'w')
-    answer_Key_File = open('Capitales_Examenes_Respuestas' + str(quiz_Number) + '.txt', 'w')
+for i in range (int(exams_For_Pupil)):
 
-    # Writing the header for the quizes
-    quiz_File.write('''Nombre:\n\nFecha:\n\nPeriodo:\n\n''')
-    quiz_File.write((' ' * 20) + 'Examen - Provincias y Capitales (Form %s)' + str(quiz_Number))
-    quiz_File.write('\n\n')
+		# Creating the quiz and answer files
+	quiz_Number = quiz_Number + 1
+	quiz_File = open('Capitales_Examenes_' + str(quiz_Number) + '.txt' , 'w')
+	answer_Key_File = open('Capitales_Examenes_Respuestas_' + str(quiz_Number) + '.txt', 'w')
 
-    # Shuffle the order of the provinces
-    provincias = list(capitales.keys())
-    random.shuffle(provincias)
+		# Writing the header for the quizes
+	quiz_File.write('''Nombre:\n\nFecha:\n\nPeriodo:\n\n''')
+	quiz_File.write((' ' * 20) + 'Examen - Provincias y Capitales: ' + str(quiz_Number))
+	quiz_File.write('\n\n')
 
-for question_Number in range(23): # Loop between the 23 provinces
-    # Get right and wrong answers
-    correct_Answer = capitales[provincias[question_Number]]
-    wrong_Answers = list(capitales.values())
-    del wrong_Answers[wrong_Answers.index(correct_Answer)]
-    wrong_Answers = random.sample(wrong_Answers, 3)
-    answer_Options = wrong_Answers + [correct_Answer]
-    random.shuffle(answer_Options)
+		# Shuffle the order of the provinces
+	provincias = list(capitales.keys())
+	random.shuffle(provincias)
 
-    # Write the question and answer options of the exams
-    quiz_File.write('''%s. Cual es la capital de %s?\n''' + (question_Number + 1, provincias[question_Number]))
+	for question_Number in range(int(answers_Quantity)): # Loop between the 23 provinces to make the number of answers
+		# Get right and wrong answers
+		correct_Answer = capitales[provincias[question_Number]]
+		wrong_Answers = list(capitales.values())
+		del wrong_Answers[wrong_Answers.index(correct_Answer)]
+		wrong_Answers = random.sample(wrong_Answers, 3)
+		answer_Options = wrong_Answers + [correct_Answer]
+		random.shuffle(answer_Options)
 
-    for i in range(4):
-        quiz_File.write(' %s. %s\n' % ('ABCD'[i], answer_Options[i]))
+		# Write the question and answers options of the exams
+		quiz_File.write('%s. Cual es la capital de %s?\n' % (question_Number + 1, provincias[question_Number]))
 
-    quiz_File.write('\n')
+		for i in range(4):
+			quiz_File.write(' %s. %s\n' % ('ABCD'[i], answer_Options[i]))
+		quiz_File.write('\n')
 
-    # Write the answers keys to a file
-    answer_Key_File.write('%s. %s\n' % (question_Number + 1, 'ABCD'[answer_Options.index(correct_Answer)]))
+		# Write the answers keys to a file
+		answer_Key_File.write('%s. %s\n' % (question_Number + 1, 'ABCD'[answer_Options.index(correct_Answer)]))
 
-    quiz_File.close()
-    answer_Key_File.close()
+	quiz_File.close()
+	answer_Key_File.close()
+
+print('Examenes creados con exito')
+print(' ')
+print('Presiones una tecla para salir')
+wait = input()
