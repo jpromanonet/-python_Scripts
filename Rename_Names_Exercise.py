@@ -12,6 +12,7 @@ import re
 
 datePattern = None
 amerFileName = None
+euroFileName = None
 
 # User parameters
 
@@ -19,12 +20,12 @@ amerFileName = None
 
     # Create a regex that matches files with the American date format
 
-datePattern = re.compile(r(.*?) # all text before the date
-       ((0|1)?\d)-               # one or two digits for the month
-       ((0|1|2|3)?\d)-           # one or two digits for the day
-       ((19|20)\d\d)             # four digits for the year
-       (.*?)$                    # all text after the date
-          , re.VERBOSE)
+datePattern = re.compile(r"""^(.*?) # all text before the date
+       ((0|1)?\d)-                  # one or two digits for the month
+       ((0|1|2|3)?\d)-              # one or two digits for the day
+       ((19|20)\d\d)                # four digits for the year
+       (.*?)$                       # all text after the date
+        """, re.VERBOSE)
 
     # Loop over the files in the working directory
 
@@ -56,4 +57,4 @@ for amerFileName in os.listdir('.'):
 
     # Rename the files
 print('Renaming "%s" to "%s"...' % (amerFileName, euroFileName))
-# shutil.move(amerFileName, euroFileName) #uncomment after testing!!!    
+shutil.move(amerFileName, euroFileName) #uncomment after testing!!!    
