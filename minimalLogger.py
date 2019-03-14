@@ -22,16 +22,26 @@ randomCode = 0 # It's the unique ID number of every file.
 fullFileName = None # It's the sum of logFileName and randomCode
 workingDir = None # It's the dir where the user is gonna save the log file.
 keepLogging = True # Value = False stop logging
+dirName = None # Directory with the date as name
+fullWorkingPath = None # It's the sum of workingDir and dirName
 
 # User parameters
 
 print('Please introduce the working directory: ')
 workingDir = input()
-os.chdir(str(workingDir))
 print(' ')
 
 # Program Logic
 
+	## Create dir if not exist or use it to save files for the day
+dirName = datetime.datetime.now().strftime("%Y-%m-%d")
+fullWorkingPath = workingDir + '\\' + dirName
+
+if not os.path.exists(str(fullWorkingPath)):
+    os.makedirs(fullWorkingPath)
+
+os.chdir(str(fullWorkingPath))
+	
     ## Creating the filename 
 logFileName = datetime.datetime.now().strftime("%Y-%m-%d") # Establish the filename to the date it's create
 randomCode = random.randint(1,10000000) # It's create the serial random number to validate the file
