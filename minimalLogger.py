@@ -26,6 +26,7 @@ workingDir = None # It's the dir where the user is gonna save the log file.
 keepLogging = True # Value = False stop logging
 dirName = None # Directory with the date as name
 fullWorkingPath = None # It's the sum of workingDir and dirName
+titleLog = None # Title for the log file.
 
     ## Stats Variables
 
@@ -41,6 +42,10 @@ totalLogs = 0 # How many logs in this file
 
 print('Please introduce the working directory: ')
 workingDir = input()
+print(' ')
+print('Please write a title for the file: ')
+titleLog = input()
+print('----------------------------------------------------------------------')
 print(' ')
 
 # Program Logic
@@ -86,7 +91,14 @@ htmlStr = '''
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
                                         <center>
-                                            <h1 class><b>FULL LOG | '''+str(logFileName)+''' | Sn: '''+str(randomCode)+'''</b></h1>
+                                            <h1><b>FULL LOG | '''+str(logFileName)+''' | Sn: '''+str(randomCode)+'''</b></h1>
+                                        </center> 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
+                                        <center>
+                                            <h4 style="background: #228B22;"><b>'''+str(titleLog)+'''</b></h4>
                                         </center> 
                                     </div>
                                 </div>
@@ -161,7 +173,7 @@ stats = '''                 </div>
                                     <div align-text="left">
                                         <b class="bg-danger">Start time:</b><b> '''+str(startLogTime)+''' Hs </b>
                                         <b class="bg-danger">Finish time:</b><b> '''+str(finishLogTime)+''' Hs </b>
-                                        <b class="bg-danger">TOTAL LOG TIME:</b><b> '''+str(totalLogTime)+''' Hs </b>
+                                        <b class="bg-danger">SESSION TIME:</b><b> '''+str(totalLogTime)+''' Hs </b>
                                         <b style="background: #008080;">    TOTAL ENTERS IN FILE:<font color="white">   '''+str(totalLogs)+'''  </font></b>
                                     </div> 
                                 </div>
